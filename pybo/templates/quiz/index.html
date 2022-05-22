@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- 네비게이션바 -->
+    {% include "navbar.html" %}
+    </div>
+        <meta charset="utf-8">
+        <title>Typing Game</title>
+        <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <!-- Game CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='gameStyle.css') }}">
+</head>
+<body>
+    <div class="__body">
+        <p id="__target">click to start</p>
+        <p class="__info">
+            Letter count: <span id="__score">0</span>,
+            Miss count: <span id="__miss">0</span>
+            Time left: <span id="__timer">0.00</span>
+        </p>
+    </div>
+<script src="{{ url_for('static', filename='main.js') }}"
+></script>
+<script src="{{ url_for('static', filename='bootstrap.min.js') }}"
+></script>
+</body>
+</html>

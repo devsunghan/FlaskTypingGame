@@ -1,0 +1,14 @@
+.__body {
+    padding-top: 40px;
+    font-family: 'Courier New', monospace;
+    text-align: center;
+}
+
+#__target {
+    font-size: 48px;
+    letter-spacing: 3px;
+}
+
+.__info {
+    color: #ccc;
+}
