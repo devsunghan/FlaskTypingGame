@@ -7,6 +7,10 @@
 #__target {
     font-size: 48px;
     letter-spacing: 3px;
+    border: 1px solid black;
+    height: 100px;
+    width: 800px;
+    display: inline-block;
 }
 
 .__info {

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- 네비게이션바 -->
     {% include "navbar.html" %}
     </div>
@@ -10,14 +11,37 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
     <!-- Game CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='gameStyle.css') }}">
+<!--    ajax-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 </head>
 <body>
     <div class="__body">
-        <p id="__target">click to start</p>
+        <div id="__target"><p>click to start</p></div>
+
         <p class="__info">
             Letter count: <span id="__score">0</span>,
             Miss count: <span id="__miss">0</span>
             Time left: <span id="__timer">0.00</span>
+
+            <div></div>
+            <button type="button" class="btn btn-light" id="__desc">게임 설명</button>
+            <button type="button" class="btn btn-light" id="__words-box">Light</button>
+<!--                <div id="__words">-->
+<!--                    {% if word_list %}-->
+<!--                    {% for i in word_list %}-->
+<!--                    <p>{{ i.id }}: {{ i.word }}</p>-->
+<!--                    {% endfor %}-->
+<!--                    {% endif %}-->
+<!--                </div>-->
+            <button type="button" class="btn btn-light" id="__myRanking">내 기록 확인</button>
+            <script>$("#__myRanking").hide();</script>
+            {% if g.user %}
+            <script>$("#__myRanking").show();</script>
+            {% endif %}
+            <button type="button" onclick="location.href='{{ url_for('question._list') }}'" class="btn btn-light" id="__community">커뮤니티 이동</button>
+            <span id="__login" style="visibility:hidden"></span>
+
         </p>
     </div>
 <script src="{{ url_for('static', filename='main.js') }}"
